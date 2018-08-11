@@ -2,11 +2,14 @@
 复制目录树,跳过出错文件,继续复制
 """
 
-import os, sys, time
+import os
+import sys
+import time
 import pdb
 
 maxsize = 1024 * 1024 * 10
-partsize = 1024 * 1024 *5
+partsize = 1024 * 1024 * 5
+
 
 def cpfile(fromfile, tofile, maxsize=maxsize):
     """
@@ -19,7 +22,7 @@ def cpfile(fromfile, tofile, maxsize=maxsize):
 
     """
 
-    if os.path.getsize(fromfile) <  maxsize:
+    if os.path.getsize(fromfile) < maxsize:
         bytesfrom = open(fromfile, 'rb').read()
         with open(tofile, 'wb') as f:
             f.write(bytesfrom)
@@ -52,7 +55,7 @@ def cp_tree(fromdir, todir, verbose=0):
     for filename in os.listdir(fromdir):
         pathfrom = os.path.join(fromdir, filename)
         pathto = os.path.join(todir, filename)
-        if  not os.path.isdir(pathfrom):
+        if not os.path.isdir(pathfrom):
             try:
                 if verbose > 1:
                     print('copying', pathfrom, 'to', pathto)
@@ -61,7 +64,7 @@ def cp_tree(fromdir, todir, verbose=0):
             except Exception:
                 print('Error coping', pathfrom, 'to', pathto)
         else:
-            if verbose >0:
+            if verbose > 0:
                 print('coping', pathfrom, 'to', pathto)
             try:
                 os.mkdir(pathto)
@@ -73,6 +76,7 @@ def cp_tree(fromdir, todir, verbose=0):
                 print('Error creating', pathto, '--skipped')
                 print(sys.exc_info()[0], sys.exc_info()[1])
     return (fcount, dcount)
+
 
 def getargs():
     """
@@ -107,7 +111,7 @@ def getargs():
 
 
 if __name__ == '__main__':
-    pdb.set_trace()
+    # pdb.set_trace()
     dirstuple = getargs()
     if dirstuple:
         print('copying...')
@@ -115,5 +119,3 @@ if __name__ == '__main__':
         fcount, dcount = cp_tree(*dirstuple)
         print('copy', fcount, 'file,', dcount, 'directory', end='')
         print('in', time.clock() - start, 'seconds')
-
-
