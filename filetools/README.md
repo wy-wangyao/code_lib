@@ -18,3 +18,11 @@ join_f(from_dir, to_file):合并文件
 递归扫描指定目录,找到特定的文件扩展名(默认当前目录,.py文件,跟踪目录)
 
 使用:`python bigpy.py [dir]  [extename]  [0|1|2]`
+
+## cpall:
+
+复制目录树,跳过出错文件,继续复制.
+
+使用:`python cpall.py form_dir to_dir`
+
+
