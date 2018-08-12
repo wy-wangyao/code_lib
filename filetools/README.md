@@ -31,4 +31,20 @@ join_f(from_dir, to_file):合并文件
 
 使用:`python diffall.py diff_dir1 diff_dir2`
 
+## zipall:
 
+将指定目录下所有的文件分别压缩,放入指定目录.最后压缩后文件中会包含祖先目录文件夹
+
+使用:`python zipall.py file_dir `
+
+## maohao_to_dirc.py:
+
+文本格式化转换,并提供将其持久化的导入导出功能.将 (键:值/n 键:值/n)类型文本转化为字典对象
+
+使用:导入to_dir('文件路径名')方法:返回字典对象.需要有原始文件
+
+## to_table.py
+
+将符号分割文本转化为markdown表格形式
+
+使用:`python to_table filename rept`filename是文件名,默认test,rept是文件分割符号,默认' '.需要有原始文件.
