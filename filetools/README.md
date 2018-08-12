@@ -25,4 +25,10 @@ join_f(from_dir, to_file):合并文件
 
 使用:`python cpall.py form_dir to_dir`
 
+## diffall:
+
+递归的比较两个目录,打印出双方特有的,和共同所有的相异的
+
+使用:`python diffall.py diff_dir1 diff_dir2`
+
 
