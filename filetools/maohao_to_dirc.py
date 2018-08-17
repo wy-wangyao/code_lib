@@ -5,7 +5,6 @@
 import pickle
 
 
-
 def process_filename(filename):
     '''
     去掉文件名后缀
@@ -33,14 +32,16 @@ def to_dir(filename):
     data = {}
     file_from = open(filename)
     for line_from in file_from:
-        if line_from[0] == ':':
-            continue
-        rec = line_from.split(':')
-        rec[0] = rec[0].strip()
-        rec[1] = rec[1].strip()
-        data[rec[0]] = rec[1]
+        if line:
+            if line_from[0] == ':':
+                continue
+            recs = line_from.split(':')
+            rec[0] = rec[0].strip()
+            rec[1] = rec[1].strip()
+            data[rec[0]] = rec[1]
     return data
-    
+
+
 def to_data(filename):
     '''
     将类字典冒号分割文本转化为请求头对象
@@ -85,10 +86,11 @@ def load_obj(filename):
     parameter:文件名
     return:对象
     '''
-    data_file = open(filename+'.pkl', 'rb')
+    data_file = open(filename + '.pkl', 'rb')
     data = pickle.load(data_file)
     data_file.close()
     return data
+
 
 if __name__ == '__main__':
     import sys

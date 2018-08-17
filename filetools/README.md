@@ -48,3 +48,11 @@ join_f(from_dir, to_file):合并文件
 将符号分割文本转化为markdown表格形式
 
 使用:`python to_table filename rept`filename是文件名,默认test,rept是文件分割符号,默认' '.需要有原始文件.
+
+## autopep8all.py
+
+遍历一个目录,将该目录下所有的.py文件用autopep8规范化
+
+使用: `python autopep8all.py dirname [recursion=False]`
+
+
