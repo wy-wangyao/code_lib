@@ -55,4 +55,11 @@ join_f(from_dir, to_file):合并文件
 
 使用: `python autopep8all.py dirname [recursion=False]`
 
+## dealfile.py
+
+文件处理类DealFile,初始化需要传入文件名.no_annotation方法去除py中的#号注释.
+
+用法`python dealfile.py <filename>`
+
+
 
