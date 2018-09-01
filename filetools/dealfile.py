@@ -5,12 +5,13 @@
 import os
 import sys
 
+
 class DealFile:
     """
     文件处理类,初始化需要传入文件名
     """
 
-    def __init__(self, filename):
+    def __init__(self, filename, *args):
         self.filename = filename
 
     def no_annotation(self):
@@ -45,4 +46,3 @@ if __name__ == "__main__":
         print("Erorr:", exce_info())
     df = DealFile(filename)
     df.no_annotation()
-

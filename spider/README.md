@@ -17,3 +17,7 @@ requests微博爬取Ajax数据+mongoDB存储
 ## maoyan.py:
 
 requests+正则表达式抓取猫眼国内票房榜
+
+## login
+
+通过requests库伪造表单模拟登录github.需要传入用户邮箱和密码.

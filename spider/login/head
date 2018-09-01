@@ -1,0 +1,15 @@
+Referer: https://github.com/
+Host: github.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/68.0.3440.75 Chrome/68.0.3440.75 Safari/537.36
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+commit: Sign in
+utf8: ✓
+authenticity_token: f4vZTrifohyOshInRudwR5C6f5n3xhgkh6LnNGKmbKYMXbDLuzMhJhlzMla9JCsuCg/KFyXpeAfNt4CUuZ6w5w==
+login: 1446745072@qq.com
+password: 密码
+
+'Referer': 'https://github.com/', 'Host': 'github.com', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/68.0.3440.75 Chrome/68.0.3440.75 Safari/537.36', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1',
+
+
+ 'commit': 'Sign in', 'utf8': '✓', 'authenticity_token': 'f4vZTrifohyOshInRudwR5C6f5n3xhgkh6LnNGKmbKYMXbDLuzMhJhlzMla9JCsuCg/KFyXpeAfNt4CUuZ6w5w==', 'login': '1446745072@qq.com', 'password': '密码'
