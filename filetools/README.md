@@ -61,5 +61,9 @@ join_f(from_dir, to_file):合并文件
 
 用法`python dealfile.py <filename>`
 
+## getrow.py
 
+获取文件行数或某些文件的总行数的类GetRow.有get_pyfile_row方法和get_dir_row方法
+
+用法`python getrow.py [FileOrDir] [func]`
 

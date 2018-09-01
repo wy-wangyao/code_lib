@@ -3,8 +3,9 @@
 """
 
 from tkinter import *
-import reload_model           
-from imp import reload      
+import reload_model
+from imp import reload
+
 
 class Hello(Frame):
     def __init__(self, master=None):
@@ -17,14 +18,15 @@ class Hello(Frame):
         Button(self, text='message2', command=self.message2).pack(side=RIGHT)
 
     def message1(self):
-        reload(radactions)         
-        radactions.message1()      
+        reload(radactions)
+        radactions.message1()
 
     def message2(self):
-        reload(radactions)         
-        radactions.message2(self)  
+        reload(radactions)
+        radactions.message2(self)
 
     def method1(self):
-        print('exposed method...')       
+        print('exposed method...')
+
 
 Hello().mainloop()

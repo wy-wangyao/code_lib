@@ -8,6 +8,7 @@ from tkinter import *
 from guimixin import GuiMixin
 from guimaker import *
 
+
 class ShellGui(GuiMixin, GuiMakerWindowMenu):
     def start(self):
         self.setMenuBar()
@@ -62,11 +63,11 @@ class ShellGui(GuiMixin, GuiMakerWindowMenu):
         设置菜单
         """
 
-        toolEntries  = []
+        toolEntries = []
         self.menuBar = [
-            ('File',  0, [('Quit', -1, self.quit)]),
+            ('File', 0, [('Quit', -1, self.quit)]),
             ('Tools', 0, toolEntries)
-            ]
+        ]
         for (label, action) in self.fetchCommands():
             toolEntries.append((label, -1, action))
 
@@ -94,9 +95,12 @@ class ListMenuGui(ShellGui):
 
     def fetchCommands(self):
         return self.myMenu
+
     def runCommand(self, cmd):
         for (label, action) in self.myMenu:
-            if label == cmd: action()
+            if label == cmd:
+                action()
+
 
 class DictMenuGui(ShellGui):
     """
@@ -105,17 +109,20 @@ class DictMenuGui(ShellGui):
 
     def fetchCommands(self):
         return self.myMenu.items()
+
     def runCommand(self, cmd):
         self.myMenu[cmd]()
-        
-        
+
+
 if __name__ == "__main__":
     import os
+
     class Demo(ListMenuGui):
         def __init__(self):
-            self.myMenu = [('Quit', self.quit),      
-                           ('Dir', os.getcwd)]       
+            self.myMenu = [('Quit', self.quit),
+                           ('Dir', os.getcwd)]
             ListMenuGui.__init__(self)
+
         def forToolBar(self, label):
-            return label in {'Dir'}           
+            return label in {'Dir'}
     Demo().mainloop()
