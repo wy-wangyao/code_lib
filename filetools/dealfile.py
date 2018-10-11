@@ -11,23 +11,20 @@ class DealFile:
     文件处理类,初始化需要传入文件名
     """
 
-    def __init__(self, filename, *args):
-        self.filename = filename
-
-    def no_annotation(self):
+    def no_annotation(self, filename):
         """
         去除py中的#号注释
         """
 
         ow = True
         tw = True
-        infile = open(self.filename, 'r')
-        outfile = open(self.filename + '.new.py', 'w')
+        infile = open(filename, 'r')
+        outfile = open(filename + '.new.py', 'w')
         for line in infile:
             for char in line:
-                if char == '"':
+                if char == '"' and ow:
                     tw = not tw
-                if char == "'":
+                if char == "'" and tw:
                     ow = not ow
                 if tw and ow and char == '#':
                     outfile.write(os.linesep)
@@ -35,8 +32,8 @@ class DealFile:
                 outfile.write(char)
         infile.close()
         outfile.close()
-        os.rename(self.filename, self.filename + '.old.py')
-        os.rename(self.filename + '.new.py', self.filename)
+        os.rename(filename, filename + '.old.py')
+        os.rename(filename + '.new.py', filename)
 
 
 if __name__ == "__main__":
@@ -44,5 +41,5 @@ if __name__ == "__main__":
         filename = sys.argv[1]
     except Exception:
         print("Erorr:", exce_info())
-    df = DealFile(filename)
-    df.no_annotation()
+    df = DealFile()
+    df.no_annotation(filename)
